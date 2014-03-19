@@ -34,7 +34,7 @@
 		".sass-cache",
 		"build_artifacts"
 	],
-	"font_face": "Droid Sans Mono Slashed",
+	"font_face": "Menlo for Powerline",
 	"font_size": 15,
 	"highlight_line": true,
 	"ignored_packages":
