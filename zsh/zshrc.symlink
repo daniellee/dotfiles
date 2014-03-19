@@ -12,12 +12,12 @@ ZSH_THEME="torkelo"
 DEFAULT_USER="torkel"
 
 # Base16 Shell
-BASE16_SHELL="$PROJECTS/dotfiles/zsh/base16-ocean.dark.sh"
+BASE16_SHELL="$HOME/.dotfiles/zsh/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Load config files
 typeset -U config_files
-config_files=($PROJECTS/dotfiles/**/*.zsh)
+config_files=($HOME/.dotfiles/**/*.zsh)
 for file in ${config_files}
 do
   source $file
