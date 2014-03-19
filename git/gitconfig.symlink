@@ -1,8 +1,8 @@
 # Borrowed from https://github.com/matthewmccullough/dotfiles/
 
 [user]
-  name = Dave Tucker
-  email = dave@dtucker.co.uk
+  name = Torkel Ödegaard
+  email = torkel.odegaard@gmail.com
 
 [color]
 # ui = true is a superset of all the more specific color options
@@ -180,7 +180,6 @@
   noderelnotes = git log --graph --pretty=format:'%h%d %s (%an)'
   configsimplelog = config format.pretty oneline
 
-
 [apply]
   whitespace = nowarn
 
@@ -192,7 +191,6 @@
 
 [diff]
   tool = p4merge
-# renames = true
 
 [mergetool]
   prompt = false
@@ -201,57 +199,12 @@
 [merge]
   tool = p4merge
 
-[branch]
-    # Automatically set up pull to be --rebase
-    #autosetuprebase = always
-
-[url "git://github.com/"]
-  insteadOf = "ghg://"
-  pushInsteadOf = "ghg://"
-  # Example: git clone ghg://ntschutta/emacs
-[url "git://github.com/dave-tucker/"]
-    insteadOf = "ghgd://"
-    pushInsteadOf = "ghgd://"
-    # Example: git clone ghgd://dotfiles
-[url "git@github.com:"]
-  insteadOf = "ghs://"
-  pushInsteadOf = "ghs://"
-[url "git@github.com:dave-tucker/"]
-  insteadOf = "ghsd://"
-  pushInsteadOf = "ghsd://"
-[url "https://github.com/"]
-  insteadOf = "ghh://"
-  pushInsteadOf = "ghh://"
-[url "https://github.com/dave-tucker/"]
-  insteadOf = "ghhd://"
-  pushInsteadOf = "ghhd://"
-
-[mergetool "sourcetree"]
-  cmd = ~/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
-
-[difftool "p4merge"]
-  cmd = \"~/Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE\"
-
-[http]
-  # proxy=http://something
-
-[github]
-  # https://github.com/blog/180-local-github-config
-  user = dave-tucker
-  #token = PLACEHOLDER
-
 [hub]
   protocol = ssh
+
 [gist]
   private = yes
   browse = yes
-
-[ghi]
-  token = PLACEHOLDER
-
-#[credential]
-  # helper = cache --timeout=300
 
 [push]
   default = matching

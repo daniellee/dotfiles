@@ -8,8 +8,8 @@ export PROJECTS=~/dev
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-DEFAULT_USER="dave"
+ZSH_THEME="torkelo"
+DEFAULT_USER="torkel"
 
 # Base16 Shell
 BASE16_SHELL="$PROJECTS/dotfiles/zsh/base16-ocean.dark.sh"
