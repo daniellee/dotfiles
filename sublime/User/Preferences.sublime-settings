@@ -1,0 +1,54 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/base16-eighties.dark (SL).tmTheme",
+	"default_line_ending": "windows",
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".sass-cache",
+		"build_artifacts"
+	],
+	"font_face": "Droid Sans Mono Slashed",
+	"font_size": 17,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"AdvancedNewFile",
+		"Vintage",
+		"Vagrant",
+		"Grunt"
+	],
+	"scroll_past_end": true,
+	"tab_size": 2,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
+	"word_wrap": false
+}
