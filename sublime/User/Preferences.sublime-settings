@@ -40,9 +40,9 @@
 	"ignored_packages":
 	[
 		"AdvancedNewFile",
+		"Grunt",
 		"Vintage",
-		"Vagrant",
-		"Grunt"
+		"Vagrant"
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
