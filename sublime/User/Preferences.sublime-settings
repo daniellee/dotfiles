@@ -35,14 +35,14 @@
 		"build_artifacts"
 	],
 	"font_face": "Menlo for Powerline",
-	"font_size": 15,
+	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"AdvancedNewFile",
-		"Grunt",
+		"Vagrant",
 		"Vintage",
-		"Vagrant"
+		"Grunt",
+		"AdvancedNewFile"
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
