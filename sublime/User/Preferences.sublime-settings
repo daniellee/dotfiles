@@ -39,10 +39,10 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vagrant",
-		"Vintage",
+		"AdvancedNewFile",
 		"Grunt",
-		"AdvancedNewFile"
+		"Vintage",
+		"Vagrant"
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
