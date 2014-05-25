@@ -2,7 +2,10 @@
 	"installed_packages":
 	[
 		"Dockerfile Syntax Highlighting",
+		"Git",
 		"JavaScript & NodeJS Snippets",
+		"Ruby Slim",
+		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
 		"Theme - Spacegray"
