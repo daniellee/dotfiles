@@ -3,8 +3,10 @@
 	[
 		"Dockerfile Syntax Highlighting",
 		"JavaScript & NodeJS Snippets",
+		"Ruby Slim",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"TOML"
 	]
 }
