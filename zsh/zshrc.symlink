@@ -86,3 +86,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/go/bin
+
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
