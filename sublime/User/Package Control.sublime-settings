@@ -9,6 +9,7 @@
 		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"TOML"
 	]
 }
