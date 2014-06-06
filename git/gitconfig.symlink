@@ -190,7 +190,7 @@
   prompt = false
 
 [diff]
-  external = /usr/local/bin/git-diff.sh
+#  external = /usr/local/bin/git-diff.sh
 
 [mergetool]
   prompt = false
