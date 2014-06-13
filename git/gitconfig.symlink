@@ -197,7 +197,12 @@
   keepBackup = false
 
 [merge]
-  tool = p4merge
+tool = mymeld
+conflictstyle = diff3
+
+[mergetool "mymeld"]
+cmd = meld --output "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
+
 
 [hub]
   protocol = ssh

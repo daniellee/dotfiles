@@ -41,8 +41,8 @@
 	[
 		"Vagrant",
 		"Vintage",
-		"Grunt",
-		"AdvancedNewFile"
+		"AdvancedNewFile",
+		"Grunt"
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
