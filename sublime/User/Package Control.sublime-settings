@@ -8,6 +8,7 @@
 		"Ruby Slim",
 		"Sass",
 		"SublimeLinter",
+		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
 		"Theme - Spacegray",
 		"TOML"

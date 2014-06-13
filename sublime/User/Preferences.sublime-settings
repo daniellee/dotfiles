@@ -39,8 +39,8 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage",
 		"Vagrant",
+		"Vintage",
 		"Grunt",
 		"AdvancedNewFile"
 	],
