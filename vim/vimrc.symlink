@@ -53,6 +53,7 @@ Bundle 'othree/html5.vim'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'Keithbsmiley/tmux.vim'
 
 " Golang
 Bundle 'fatih/vim-go'
