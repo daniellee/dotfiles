@@ -54,6 +54,10 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jelera/vim-javascript-syntax'
 
+" Golang
+Bundle 'fatih/vim-go'
+Bundle 'Valloric/YouCompleteMe'
+
 " Python
 Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
@@ -69,13 +73,15 @@ Bundle 'mgutz/vim-colors'
 Bundle 'ehamberg/vim-cute-python'
 Bundle 'bling/vim-airline'
 Bundle 'jgdavey/vim-railscasts'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'fatih/molokai'
 
 " Required after vundle plugin definitions
 filetype plugin indent on
 
 " Change leader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\<Space>""
+let g:mapleader = "\<Space>"
 
 " Wildmenu
 set wildmenu
@@ -124,6 +130,8 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 set guifont=Inconsolata\ for\ Powerline:h13
+set nobackup
+set noswapfile
 
 " Remove the toolbar if we're running under a GUI (e.g. MacVIM).
 if has("gui_running")
@@ -134,8 +142,10 @@ endif
 set background=dark
 set term=gnome-256color
 set t_Co=256
+let g:rehash256 = 1
 colorscheme railscasts
 set t_ut=
+
 
 hi Normal ctermfg=251    ctermbg=235   cterm=none
 
@@ -163,6 +173,15 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " I CAN HAZ NORMAL REGEXES?
 nnoremap / /\v
 vnoremap / /\v
+
+" Quick commands skip shift
+nnoremap ; :
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 " highlight ExtraWhitespace ctermbg=red guibg=red
@@ -224,6 +243,13 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Fix those pesky situations where you edit & need sudo to save
 cmap w!! w !sudo tee % >/dev/null
 
+" Good leader mappings
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>n :bn<CR>
+
+" switch betn last two buffers:
+nnoremap <leader><leader> <c-^>
+
 
 " Plugin Configurations
 """""""""""""""""""""""
@@ -241,7 +267,7 @@ let g:gist_post_private = 1
 
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
 let g:tagbar_autoshowtag = 1
 let g:tagbar_autofocus = 1
 
@@ -282,3 +308,9 @@ map <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
+
+" Vim-Go
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+au Filetype go nnoremap <leader>d :tab split <CR>:exe "GoDef"<CR>
+
