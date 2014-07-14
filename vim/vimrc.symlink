@@ -76,6 +76,8 @@ Bundle 'bling/vim-airline'
 Bundle 'jgdavey/vim-railscasts'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'fatih/molokai'
+Bundle 'edkolev/tmuxline.vim'
+
 
 " Required after vundle plugin definitions
 filetype plugin indent on
@@ -144,7 +146,7 @@ set background=dark
 set term=gnome-256color
 set t_Co=256
 let g:rehash256 = 1
-colorscheme railscasts
+colorscheme torkelo_colors
 set t_ut=
 
 
@@ -183,6 +185,15 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Easy move lines
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 " highlight ExtraWhitespace ctermbg=red guibg=red
@@ -251,9 +262,16 @@ nnoremap <leader>n :bn<CR>
 " switch betn last two buffers:
 nnoremap <leader><leader> <c-^>
 
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Plugin Configurations
 """""""""""""""""""""""
+" disable tmux airline
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_theme = 'airline'
+let g:tmuxline_preset = 'powerline'
 
 " Pyflakes
 "autocmd BufWritePost *.py call Flake8()
@@ -289,7 +307,7 @@ let g:ctrlp_mruf_max = 250 " number of recently opened files
 nmap ; :CtrlPBuffer<CR>
 
 " Double rainbow - What does it mean!?
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 set laststatus=2
 let g:syntastic_enable_signs = 1
@@ -315,3 +333,12 @@ au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
 au Filetype go nnoremap <leader>d :tab split <CR>:exe "GoDef"<CR>
 
+" Trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
