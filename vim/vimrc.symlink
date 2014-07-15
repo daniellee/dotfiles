@@ -76,8 +76,6 @@ Bundle 'bling/vim-airline'
 Bundle 'jgdavey/vim-railscasts'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'fatih/molokai'
-Bundle 'edkolev/tmuxline.vim'
-
 
 " Required after vundle plugin definitions
 filetype plugin indent on
@@ -246,9 +244,6 @@ au BufRead,BufNewFile *.json set filetype=json
 " Puppet configurations
 au FileType puppet setlocal noexpandtab
 
-" Get jinja filetype selection working correctly for *.jinja.html files.
-au BufNewFile,BufReadPost *.jinja* setlocal filetype=htmljinja
-
 " Get rid of search hilighting with ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
@@ -263,15 +258,29 @@ nnoremap <leader>n :bn<CR>
 nnoremap <leader><leader> <c-^>
 
 " Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Refactorings
+function! Refactor()
+    call inputsave()
+    let @z=input("What do you want to rename '" . @z . "' to? ")
+    call inputrestore()
+endfunction
+
+" Locally (local to block) rename a variable
+nmap <Leader>rf "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/g<cr>`x
+
 
 " Plugin Configurations
 """""""""""""""""""""""
 " disable tmux airline
-let g:airline#extensions#tmuxline#enabled = 0
-let g:tmuxline_theme = 'airline'
-let g:tmuxline_preset = 'powerline'
+" let g:airline#extensions#tmuxline#enabled = 0
+" let g:tmuxline_theme = 'airline'
+" let g:tmuxline_preset = 'powerline'
 
 " Pyflakes
 "autocmd BufWritePost *.py call Flake8()
