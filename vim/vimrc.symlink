@@ -54,6 +54,7 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'Keithbsmiley/tmux.vim'
+Bundle 'groenewege/vim-less'
 
 " Golang
 Bundle 'fatih/vim-go'
@@ -226,7 +227,7 @@ autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 sh
 autocmd FileType php setlocal colorcolumn=100
 
 " HTML configurations
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 
 " Python configurations
 autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
@@ -263,6 +264,9 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Quickly open cheat file
+nmap <silent> <leader>ec :e ~/.dotfiles/vim/cheat.txt<CR>
 
 " Refactorings
 function! Refactor()

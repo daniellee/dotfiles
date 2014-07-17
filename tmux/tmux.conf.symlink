@@ -38,7 +38,7 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# and use C-h and C-l to cycle thru panes
+# and use C-h and C-l to cycle thru windows
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
@@ -53,9 +53,9 @@ bind-key C-i select-layout even-vertical
 bind-key C-v select-layout even-horizontal
 bind-key C-o resize-pane -y 1000
 
-## Join windows: <prefix> s, <prefix> j
-#bind-key j command-prompt -p "join pane from:"  "join-pane -s '%%'"
-#bind-key s command-prompt -p "send pane to:"  "join-pane -t '%%'"
+## Join/break windows:
+bind-key Enter break-pane
+bind-key Space command-prompt "joinp -t:%%" # %% = prompt for window.pane [-V|H] # vert|hor split
 
 # Sync panes
 # bind C-s set-window-option synchronize-panes
