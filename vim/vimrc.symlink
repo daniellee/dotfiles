@@ -303,6 +303,12 @@ let g:tagbar_ctags_bin = '/usr/bin/ctags'
 let g:tagbar_autoshowtag = 1
 let g:tagbar_autofocus = 1
 
+" AG silver searcher
+map <leader>a :Ag!<space>
+
+" search for word under cursor with Silver Searcher
+map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
+
 " crtl-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'  " search anything (in files, buffers and MRU files at the same time.)
@@ -355,3 +361,11 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+function! SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
