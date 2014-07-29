@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export TERM='xterm-256color'
+export TERM=xterm-256color
 
 # Projects folder
 export PROJECTS=~/dev
@@ -91,4 +91,5 @@ export PATH=$PATH:$GOPATH/bin
 #map caps to esc
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-
+# aliases
+alias irssi='TERM=screen-256color irssi'

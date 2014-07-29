@@ -77,6 +77,7 @@ Bundle 'bling/vim-airline'
 Bundle 'jgdavey/vim-railscasts'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'fatih/molokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 " Required after vundle plugin definitions
 filetype plugin indent on
@@ -124,7 +125,7 @@ set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "  case-sensitive otherwise
-set hlsearch      " highlight search terms
+set nohlsearch
 set incsearch     " show search matches as you type
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -144,12 +145,13 @@ endif
 set background=dark
 set term=gnome-256color
 set t_Co=256
+let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme torkelo_colors
+colorscheme railscasts
 set t_ut=
 
-
-hi Normal ctermfg=251    ctermbg=235   cterm=none
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 " Special characters for hilighting non-priting spaces/tabs/etc.
 " set list listchars=tab:Â»\ ,trail:Â·
@@ -285,6 +287,7 @@ nmap <Leader>rf "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-
 " let g:airline#extensions#tmuxline#enabled = 0
 " let g:tmuxline_theme = 'airline'
 " let g:tmuxline_preset = 'powerline'
+let g:airline_theme='dark'
 
 " Pyflakes
 "autocmd BufWritePost *.py call Flake8()

@@ -35,13 +35,13 @@
 		"build_artifacts"
 	],
 	"font_face": "Ubuntu Mono derivative Powerline",
-	"font_size": 20,
+	"font_size": 13,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vagrant",
 		"AdvancedNewFile",
 		"Grunt",
+		"Vagrant",
 		"Vintage"
 	],
 	"scroll_past_end": true,
