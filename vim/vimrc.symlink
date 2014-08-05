@@ -55,6 +55,8 @@ Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'Keithbsmiley/tmux.vim'
 Bundle 'groenewege/vim-less'
+Bundle "ekalinin/Dockerfile.vim"
+Bundle 'slim-template/vim-slim'
 
 " Golang
 Bundle 'fatih/vim-go'
@@ -115,7 +117,7 @@ au VimResized * exe "normal! \<c-w>="
 syntax enable
 set number        " always show line numbers
 set hidden        " Allow un-saved buffers in background
-set clipboard=unnamed " Share system clipboard.
+set clipboard=unnamedplus " Share system clipboard.
 set backspace=indent,eol,start " Make backspace behave normally.
 set directory=/tmp// " swap files
 set backupskip=/tmp/*,/private/tmp/*
@@ -195,6 +197,8 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" exit insert mode
+inoremap jk <Esc>
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 " highlight ExtraWhitespace ctermbg=red guibg=red
@@ -280,6 +284,10 @@ endfunction
 " Locally (local to block) rename a variable
 nmap <Leader>rf "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/g<cr>`x
 
+" end key i insert mode
+imap <End> <c-o>g$
+" close buffer without closing split
+nmap <silent> <leader>c :bp\|bd #<CR>
 
 " Plugin Configurations
 """""""""""""""""""""""
@@ -293,12 +301,6 @@ let g:airline_theme='dark'
 "autocmd BufWritePost *.py call Flake8()
 let g:flake8_ignore="E128,E501"
 let g:syntastic_python_checker_args='--ignore=E501,E128'
-
-" Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 2
-let g:gist_show_privates = 1
-let g:gist_post_private = 1
 
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
@@ -318,8 +320,8 @@ let g:ctrlp_cmd = 'CtrlP'  " search anything (in files, buffers and MRU files at
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 let g:ctrlp_root_markers = ['.git']
-"let g:ctrlp_working_path_mode = 'ra' " search for nearest ancestor like .git, .hg, and the directory of the current file
-let g:ctrlp_match_window_bottom = 0 " show the match window at the top of the screen
+let g:ctrlp_working_path_mode = 'ra' " search for nearest ancestor like .git, .hg, and the directory of the current file
+let g:ctrlp_match_window_bottom = 1 " show the match window at the top of the screen
 let g:ctrlp_max_height = 10 " maxiumum height of match window
 let g:ctrlp_switch_buffer = 'et' " jump to a file if it's open already
 let g:ctrlp_use_caching = 1 " enable caching
