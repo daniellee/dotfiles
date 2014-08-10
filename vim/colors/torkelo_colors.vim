@@ -50,7 +50,7 @@ hi link htmlValue            xmlValue
 
 hi Normal                    guifg=#E6E1DC guibg=#141414 ctermfg=254 ctermbg=200
 hi Cursor                    guifg=#000000 ctermfg=0     guibg=#FFFFFF ctermbg=15
-hi CursorLine                guibg=#242424 guifg=NONE    gui=NONE ctermfg=NONE  ctermbg=234 cterm=NONE
+hi CursorLine                guibg=#242424 guifg=NONE    gui=NONE ctermfg=51  ctermbg=234 cterm=NONE
 hi CursorCol                 guibg=#333333 guifg=NONE
 hi StatusLine                guifg=Black   guibg=#aabbee gui=bold ctermfg=Black ctermbg=153 cterm=bold
 hi StatusLineNC              guifg=#444444 guibg=#aaaaaa gui=none ctermfg=233   ctermbg=237 cterm=none
@@ -64,6 +64,7 @@ hi Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 hi Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 hi Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 hi Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
+hi Boolean                   guifg=#CC7833 ctermfg=51 cterm=NONE
 hi link Include              Statement
 hi link PreCondit            Statement
 
@@ -86,7 +87,7 @@ hi link diffSubname          Comment
 
 hi DiffAdd                   guifg=#E6E1DC ctermfg=82 guibg=#519F50 ctermbg=234
 hi DiffDelete                guifg=#E6E1DC ctermfg=196 guibg=#660000 ctermbg=234
-hi DiffChange                guifg=#E6E1DC ctermfg=51 guibg=#A36029 ctermbg=234
+hi DiffChange                guifg=#E6E1DC ctermfg=220 guibg=#A36029 ctermbg=234
 hi DiffText                  guifg=#FFFFFF ctermfg=15 guibg=#EE3333 ctermbg=124 gui=bold cterm=bold
 hi Special                   guifg=#DA4939 ctermfg=167
 
