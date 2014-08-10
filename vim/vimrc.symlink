@@ -39,7 +39,6 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
-Bundle 'luochen1990/rainbow'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'scrooloose/nerdtree'
@@ -151,12 +150,10 @@ endif
 set background=dark
 set term=gnome-256color
 set t_Co=256
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme railscasts
+colorscheme torkelo_colors
 set t_ut=
 
-highlight Normal ctermbg=NONE
+highlight Normal ctermbg=234
 highlight nonText ctermbg=NONE
 
 " Special characters for hilighting non-priting spaces/tabs/etc.
