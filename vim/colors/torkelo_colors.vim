@@ -48,7 +48,7 @@ hi link htmlEndTag           xmlEndTag
 hi link htmlArg              xmlArg
 hi link htmlValue            xmlValue
 
-hi Normal                    guifg=#E6E1DC guibg=#141414 ctermfg=254 ctermbg=235
+hi Normal                    guifg=#E6E1DC guibg=#141414 ctermfg=254 ctermbg=200
 hi Cursor                    guifg=#000000 ctermfg=0     guibg=#FFFFFF ctermbg=15
 hi CursorLine                guibg=#242424 guifg=NONE    gui=NONE ctermfg=NONE  ctermbg=234 cterm=NONE
 hi CursorCol                 guibg=#333333 guifg=NONE
@@ -67,7 +67,8 @@ hi Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
 hi link Include              Statement
 hi link PreCondit            Statement
 
-hi LineNr                    guifg=#595959 guibg=#2b2b2b ctermfg=243 ctermbg=235
+hi LineNr                    guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
+hi SignColumn                guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
 hi CursorLineNr              guifg=#999999 guibg=#242424 ctermfg=250 ctermbg=234 cterm=NONE gui=NONE
 hi String                    guifg=#A5C261 ctermfg=107
 hi link Number String
@@ -83,9 +84,9 @@ hi link diffRemoved          Type
 hi link diffLine             PreProc
 hi link diffSubname          Comment
 
-hi DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=59
-hi DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
-hi DiffChange                guifg=#E6E1DC ctermfg=7 guibg=#A36029 ctermbg=130
+hi DiffAdd                   guifg=#E6E1DC ctermfg=82 guibg=#519F50 ctermbg=234
+hi DiffDelete                guifg=#E6E1DC ctermfg=196 guibg=#660000 ctermbg=234
+hi DiffChange                guifg=#E6E1DC ctermfg=51 guibg=#A36029 ctermbg=234
 hi DiffText                  guifg=#FFFFFF ctermfg=15 guibg=#EE3333 ctermbg=124 gui=bold cterm=bold
 hi Special                   guifg=#DA4939 ctermfg=167
 
