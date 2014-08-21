@@ -58,8 +58,8 @@ Bundle "ekalinin/Dockerfile.vim"
 Bundle 'slim-template/vim-slim'
 
 "Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 " Golang
 Bundle 'fatih/vim-go'
@@ -176,6 +176,9 @@ set foldlevel=99
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Save with capial W
+command! W w
 
 " I CAN HAZ NORMAL REGEXES?
 nnoremap / /\v
@@ -319,17 +322,17 @@ map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'  " search anything (in files, buffers and MRU files at the same time.)
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|node_modules)($|[/\\])|__init__\.py'
 let g:ctrlp_root_markers = ['.git']
 let g:ctrlp_working_path_mode = 'ra' " search for nearest ancestor like .git, .hg, and the directory of the current file
-let g:ctrlp_match_window_bottom = 1 " show the match window at the top of the screen
+let g:ctrlp_match_window_bottom = 0 " show the match window at the top of the screen
 let g:ctrlp_max_height = 10 " maxiumum height of match window
 let g:ctrlp_switch_buffer = 'et' " jump to a file if it's open already
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
 let g:ctrlp_show_hidden = 0 " don't show me dotfiles
 let g:ctrlp_mruf_max = 250 " number of recently opened files
-nmap ; :CtrlPBuffer<CR>
+nmap <leader>p :CtrlPBuffer<CR>
 
 " Double rainbow - What does it mean!?
 " let g:rainbow_active = 1
