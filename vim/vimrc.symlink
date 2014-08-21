@@ -204,12 +204,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " exit insert mode
 inoremap jk <Esc>
 
-" Make sure we hilight extra whitespace in the most annoying way possible.
-" highlight ExtraWhitespace ctermbg=red guibg=red
-" match ExtraWhitespace /\s\+$/
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" insert newline/break line
+:nnoremap K i<CR><Esc>
 
 
 " General auto-commands
@@ -261,10 +257,6 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Fix those pesky situations where you edit & need sudo to save
 cmap w!! w !sudo tee % >/dev/null
 
-" Good leader mappings
-nnoremap <leader>p :bp<CR>
-nnoremap <leader>n :bn<CR>
-
 " switch betn last two buffers:
 nnoremap <leader><leader> <c-^>
 
@@ -292,6 +284,12 @@ nmap <Leader>rf "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-
 imap <End> <c-o>g$
 " close buffer without closing split
 nmap <silent> <leader>c :bp\|bd #<CR>
+
+" fix home and end keys in mux
+map <Esc>[1~ <Home>
+map! <Esc>[1~ <Home>
+map <Esc>[4~ <End>
+map! <Esc>[4~ <End>
 
 " Plugin Configurations
 """""""""""""""""""""""
@@ -333,9 +331,6 @@ let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache ever
 let g:ctrlp_show_hidden = 0 " don't show me dotfiles
 let g:ctrlp_mruf_max = 250 " number of recently opened files
 nmap <leader>p :CtrlPBuffer<CR>
-
-" Double rainbow - What does it mean!?
-" let g:rainbow_active = 1
 
 set laststatus=2
 let g:syntastic_enable_signs = 1
