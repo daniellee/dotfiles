@@ -94,3 +94,5 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # aliases
 alias irssi='TERM=screen-256color irssi'
+alias cdgfpro='cd ~/dev/go/src/github.com/torkelo/grafana-pro'
+alias cdgf='cd ~/dev/grafana'

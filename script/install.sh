@@ -4,7 +4,7 @@ mkdir bin
 mkdir opt
 
 # Essentials (source control)
-sudo apt-get -y install git-core git-doc git-flow mercurial subversion 
+sudo apt-get -y install git-core git-doc git-flow mercurial subversion
 sudo apt-get -y install tig
 
 # Development (Math)
@@ -35,6 +35,9 @@ sudo apt-get -y remove libboost1.48-all-dev # just in case
 sudo apt-get -y remove libboost1.49-all-dev # just in case
 sudo apt-get -y install libboost1.50-all-dev
 #sudo apt-get -y install libboost-python-dev
+
+# Install pip and i3 stuff
+sudo apt-get -y install python-pip
 
 # Install Google's Protocol Buffers
 ## sudo apt-get -y install libprotobuf-dev protobuf-compiler python-protobuf

@@ -8,8 +8,8 @@ let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 
 if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
     echo ""
+    echo "Installing Vundle.."
     silent !mkdir -p ~/.vim/bundle
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     let iCanHazVundle=0
@@ -61,6 +61,9 @@ Bundle 'slim-template/vim-slim'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
+" javascript
+" Bundle "mephux/vim-jsfmt"
+
 " Golang
 Bundle 'fatih/vim-go'
 Bundle 'Valloric/YouCompleteMe'
@@ -75,8 +78,6 @@ Bundle 'tpope/vim-endwise'
 
 " Fun, but not useful
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'skammer/vim-css-color'
-Bundle 'mgutz/vim-colors'
 Bundle 'ehamberg/vim-cute-python'
 Bundle 'bling/vim-airline'
 Bundle 'jgdavey/vim-railscasts'
@@ -207,6 +208,9 @@ inoremap jk <Esc>
 " insert newline/break line
 :nnoremap K i<CR><Esc>
 
+" smart home
+noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
+imap <silent> <Home> <C-O><Home>
 
 " General auto-commands
 autocmd FileType * setlocal colorcolumn=0
