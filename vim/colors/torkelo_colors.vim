@@ -56,28 +56,28 @@ hi StatusLine                guifg=Black   guibg=#aabbee gui=bold ctermfg=Black 
 hi StatusLineNC              guifg=#444444 guibg=#aaaaaa gui=none ctermfg=233   ctermbg=237 cterm=none
 hi VertSplit                 guifg=Black   guibg=#aabbee gui=bold ctermfg=237   ctermbg=237 cterm=none
 
-hi Comment                   guifg=#BC9458 ctermfg=180 gui=italic
+hi Comment                   guifg=#BC9458 ctermfg=243 gui=italic
 hi Constant                  guifg=#6D9CBE ctermfg=73
 hi link Identifier Constant
 hi Define                    guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
-hi Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
+hi Statement                 guifg=#CC7833 ctermfg=202 gui=NONE cterm=NONE
 hi Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
 hi Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
-hi Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
-hi Boolean                   guifg=#CC7833 ctermfg=51 cterm=NONE
+hi Keyword                   guifg=#CC7833 ctermfg=197 cterm=NONE
+hi Boolean                   guifg=#CC7833 ctermfg=45 cterm=NONE
 hi link Include              Statement
 hi link PreCondit            Statement
 
 hi LineNr                    guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
 hi SignColumn                guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
 hi CursorLineNr              guifg=#999999 guibg=#242424 ctermfg=250 ctermbg=234 cterm=NONE gui=NONE
-hi String                    guifg=#A5C261 ctermfg=107
-hi link Number String
+hi String                    guifg=#A5C261 ctermfg=78
+hi Number                    guifg=#A5C261 ctermfg=47
 hi PreProc                   guifg=#E6E1DC ctermfg=103
 hi Search                    guifg=NONE    ctermfg=NONE guibg=#444444 ctermbg=235
 hi IncSearch                 guifg=White   guibg=Black ctermfg=White ctermbg=Black
 hi Title                     guifg=#FFFFFF ctermfg=15
-hi Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
+hi Type                      guifg=#DA4939 ctermfg=45 gui=NONE cterm=NONE
 hi Visual                    guibg=#5A647E ctermbg=60
 
 hi link diffAdded            String
@@ -121,8 +121,7 @@ hi MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
 
 hi Ignore                    ctermfg=Black
 hi WildMenu                  guifg=Black   guibg=#ffff00 gui=bold cterm=bold
-hi Directory                 none
-hi link Directory            Identifier
+hi Directory                 ctermfg=221 cterm=bold
 
 hi Folded                    guifg=#F6F3E8 guibg=#444444 gui=NONE ctermbg=238 ctermfg=White cterm=NONE
 hi FoldColumn                none
