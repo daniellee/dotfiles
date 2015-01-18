@@ -39,11 +39,11 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Vagrant",
-		"AdvancedNewFile",
+		"Git",
 		"Grunt",
-		"Git"
+		"Vintage",
+		"AdvancedNewFile",
+		"Vagrant"
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
