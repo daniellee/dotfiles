@@ -43,6 +43,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'svermeulen/vim-easyclip'
 
 " Syntaxes
 Bundle 'leshill/vim-json'
@@ -359,6 +361,10 @@ let g:nerdtree_tabs_open_on_console_startup = 0
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
 au Filetype go nnoremap <leader>d :tab split <CR>:exe "GoDef"<CR>
+au FileType go nmap <leader>e <Plug>(go-rename)
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'govet']
+let g:go_highlight_functions = 1
 
 " Trailing whitespace
 function! <SID>StripTrailingWhitespaces()
