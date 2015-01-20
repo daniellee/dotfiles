@@ -45,6 +45,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'svermeulen/vim-easyclip'
+Bundle 'kana/vim-textobj-user'
+Bundle 'rhysd/vim-textobj-anyblock'
 
 " Syntaxes
 Bundle 'leshill/vim-json'
@@ -123,7 +125,7 @@ au VimResized * exe "normal! \<c-w>="
 syntax enable
 set number        " always show line numbers
 set hidden        " Allow un-saved buffers in background
-set clipboard=unnamedplus " Share system clipboard.
+set clipboard=unnamedplus,unnamed,exclude:cons\|linux
 set backspace=indent,eol,start " Make backspace behave normally.
 set directory=/tmp// " swap files
 set backupskip=/tmp/*,/private/tmp/*
