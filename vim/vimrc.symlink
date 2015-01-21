@@ -188,7 +188,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Quick commands skip shift
-nnoremap ; :
+nnoremap , :
 
 " Easy window navigation
 map <C-h> <C-w>h
