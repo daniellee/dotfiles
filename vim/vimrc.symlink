@@ -45,6 +45,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'rhysd/vim-textobj-anyblock'
+Bundle 'kana/vim-textobj-user'
 
 " Syntaxes
 Bundle 'leshill/vim-json'
