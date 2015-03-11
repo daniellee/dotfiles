@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $1 = "root" ]; then
+   echo "Releasing root docs"
+   make AWS_S3_BUCKET=docs.grafana.org BUILD_ROOT=yes DISTRIBUTION_ID=E3STLVTN1R1G0T docs-release
+else
+  echo "Releasing local branch version docs"
+  make AWS_S3_BUCKET=docs.grafana.org BUILD_ROOT=yes DISTRIBUTION_ID=E3STLVTN1R1G0T docs-release
+fi
