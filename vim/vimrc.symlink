@@ -44,8 +44,8 @@ Bundle 'mhinz/vim-signify'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'kana/vim-textobj-user'
 Bundle 'rhysd/vim-textobj-anyblock'
+Bundle 'kana/vim-textobj-user'
 
 " Syntaxes
 Bundle 'leshill/vim-json'
@@ -206,8 +206,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " exit insert mode
-inoremap jk <Esc>
 
+inoremap jk <Esc>
 " insert newline/break line
 :nnoremap K i<CR><Esc>
 
@@ -357,6 +357,14 @@ map <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
+
+" GoldenView
+let g:goldenview__enable_default_mapping = 0
+nmap <silent> <C-S>  <Plug>GoldenViewSplit
+nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+nmap <silent> <C-L>  <Plug>GoldenViewNext
+nmap <silent> <C-H>  <Plug>GoldenViewPrevious
 
 " Vim-Go
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
