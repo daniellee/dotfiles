@@ -48,6 +48,8 @@ hi link htmlEndTag           xmlEndTag
 hi link htmlArg              xmlArg
 hi link htmlValue            xmlValue
 
+"" hi link jsAssignmentExpr     Define
+
 hi Normal                    guifg=#E6E1DC guibg=#141414 ctermfg=254 ctermbg=200
 hi Cursor                    guifg=#000000 ctermfg=0     guibg=#FFFFFF ctermbg=15
 hi CursorLine                guibg=#242424 guifg=NONE    gui=NONE ctermfg=51  ctermbg=234 cterm=NONE
