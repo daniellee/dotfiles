@@ -70,7 +70,7 @@ hi Boolean                   guifg=#CC7833 ctermfg=45 cterm=NONE
 hi link Include              Statement
 hi link PreCondit            Statement
 
-hi LineNr                    guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
+hi LineNr                    guifg=#595959 guibg=#2b2b2b ctermfg=240 ctermbg=234
 hi SignColumn                guifg=#595959 guibg=#2b2b2b ctermfg=237 ctermbg=234
 hi CursorLineNr              guifg=#999999 guibg=#242424 ctermfg=250 ctermbg=234 cterm=NONE gui=NONE
 hi String                    guifg=#A5C261 ctermfg=78
