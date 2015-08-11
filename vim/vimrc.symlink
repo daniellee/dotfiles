@@ -59,6 +59,7 @@ Bundle 'Keithbsmiley/tmux.vim'
 Bundle 'groenewege/vim-less'
 Bundle "ekalinin/Dockerfile.vim"
 Bundle 'slim-template/vim-slim'
+Bundle 'cespare/vim-toml'
 
 "Snippets
 Bundle 'SirVer/ultisnips'
@@ -66,6 +67,8 @@ Bundle 'honza/vim-snippets'
 
 " javascript
 Bundle 'pangloss/vim-javascript'
+" typescript
+Bundle "clausreinke/typescript-tools.vim"
 
 " Bundle "mephux/vim-jsfmt"
 
@@ -156,11 +159,15 @@ endif
 set background=dark
 set term=gnome-256color
 set t_Co=256
+"set t_Co=16
 colorscheme torkelo_colors
 set t_ut=
 
 highlight Normal ctermbg=234
 highlight nonText ctermbg=NONE
+
+" Pate in visual mode without updating default registry
+vnoremap p "_dP
 
 " Special characters for hilighting non-priting spaces/tabs/etc.
 " set list listchars=tab:Â»\ ,trail:Â·
@@ -376,6 +383,10 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['go', 'govet']
 let g:go_highlight_functions = 1
+
+" Typescript
+au BufRead,BufNewFile *.ts setlocal filetype=typescript
+set rtp+=/home/torkel/.vim/bundle/typescript-tools.vim/
 
 " Trailing whitespace
 function! <SID>StripTrailingWhitespaces()

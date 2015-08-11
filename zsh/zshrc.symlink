@@ -6,6 +6,7 @@ export TERM=xterm-256color
 
 # Projects folder
 export PROJECTS=~/dev
+export EDITOR='vim'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -95,6 +96,7 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 # aliases
 alias irssi='TERM=screen-256color irssi'
 alias cdgf='cd ~/dev/go/src/github.com/grafana/grafana'
+alias cdgfr='cd ~/dev/raintank/go/src/github.com/grafana/grafana'
 
 export LANG="sv_SE.UTF-8"
 export LC_COLLATE="sv_SE.UTF-8"
@@ -106,3 +108,4 @@ export LC_TIME="sv_SE.UTF-8"
 export LC_ALL="sv_SE.UTF-8"
 
 stty -ixon
+

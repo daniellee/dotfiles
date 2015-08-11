@@ -38,6 +38,7 @@
   editor = vim
 
 [alias]
+  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   br = branch -a
   s = status -u -s
   cl = log --stat -C -2
