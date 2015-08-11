@@ -27,6 +27,11 @@ sudo apt-get -y install libncurses5-dev # needed to build vim from source
 sudo apt-get -y install vim # system availability - we will use our own compiled version in $(HOME)/bin
 sudo apt-get -y install exuberant-ctags cscope xclip
 
+# Neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+
 # Install Boost v1.50
 #sudo apt-get -y install libboost-dev # usually this installs v1.46
 sudo apt-get -y remove libboost1.46-all-dev # just in case
