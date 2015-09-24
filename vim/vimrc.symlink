@@ -158,13 +158,10 @@ endif
 
 " Default background & theme
 set background=dark
-set term=gnome-256color
+set term=screen-256color
 set t_Co=256
-"set t_Co=16
 colorscheme torkelo_colors
-set t_ut=
-
-highlight Normal ctermbg=234
+set t_ut=highlight Normal ctermbg=234
 highlight nonText ctermbg=NONE
 
 " Pate in visual mode without updating default registry

@@ -1,5 +1,5 @@
-#!/bin/bash
 cd $HOME
+#!/bin/bash
 mkdir bin
 mkdir opt
 
