@@ -70,6 +70,7 @@ Bundle 'honza/vim-snippets'
 " javascript
 Bundle 'pangloss/vim-javascript'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
 
 " Bundle "mephux/vim-jsfmt"
 
@@ -271,6 +272,8 @@ au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab
 " Type script
 au BufRead,BufNewFile *.ts        setlocal filetype=typescript
 set rtp+=~/.vim/bundle/typescript-tools.vim/
+let g:js_indent_typescript = 1
+let g:typescript_indent_disable = 1
 
 if !exists("g:ycm_semantic_triggers")
    let g:ycm_semantic_triggers = {}
