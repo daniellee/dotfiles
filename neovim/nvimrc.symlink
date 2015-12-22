@@ -37,7 +37,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'rking/ag.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-signify'
@@ -46,6 +46,8 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'rhysd/vim-textobj-anyblock'
 Bundle 'kana/vim-textobj-user'
+Bundle 'christoomey/vim-system-copy'
+Bundle 'benekastah/neomake'
 
 " Syntaxes
 Bundle 'leshill/vim-json'
@@ -67,8 +69,8 @@ Bundle 'honza/vim-snippets'
 
 " javascript
 Bundle 'pangloss/vim-javascript'
-" typescript
-Bundle "clausreinke/typescript-tools.vim"
+Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
 
 " Bundle "mephux/vim-jsfmt"
 
@@ -129,7 +131,7 @@ au VimResized * exe "normal! \<c-w>="
 syntax enable
 set number        " always show line numbers
 set hidden        " Allow un-saved buffers in background
-set clipboard=unnamedplus,unnamed,exclude:cons\|linux
+set clipboard=unnamed
 set backspace=indent,eol,start " Make backspace behave normally.
 set directory=/tmp// " swap files
 set backupskip=/tmp/*,/private/tmp/*
@@ -158,14 +160,12 @@ endif
 
 " Default background & theme
 set background=dark
-set term=screen-256color
 set t_Co=256
 colorscheme torkelo_colors
-set t_ut=highlight Normal ctermbg=234
-highlight nonText ctermbg=NONE
+set t_ut=
 
-" Pate in visual mode without updating default registry
-vnoremap p "_dP
+highlight Normal ctermbg=234
+highlight nonText ctermbg=NONE
 
 " Special characters for hilighting non-priting spaces/tabs/etc.
 " set list listchars=tab:Â»\ ,trail:Â·
@@ -222,8 +222,18 @@ inoremap jk <Esc>
 noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
 imap <silent> <Home> <C-O><Home>
 
+" Pate in visual mode without updating default registry
+vnoremap p "_dP
+
 " General auto-commands
 autocmd FileType * setlocal colorcolumn=0
+
+autocmd! BufWritePost *.js Neomake
+autocmd! BufWritePost *.ts Neomake
+autocmd! BufWritePost *.go Neomake!
+
+let g:neomake_javascript_enabled_makers = ['jshint', 'jscs']
+
 " autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Get rid of trailing whitespace highlighting in mutt.
@@ -258,6 +268,22 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " Javascript configurations
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab
+
+" Type script
+au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+set rtp+=~/.vim/bundle/typescript-tools.vim/
+let g:js_indent_typescript = 1
+let g:typescript_indent_disable = 1
+
+if !exists("g:ycm_semantic_triggers")
+   let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+set completeopt-=preview
+
+let g:TSS = ['tss','--module','amd']
+
+au FileType typescript nmap gd :TSSdef<CR>
 
 " Ensure that JSON files have their filetype properly set.
 au BufRead,BufNewFile *.json set filetype=json
@@ -334,7 +360,7 @@ map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'  " search anything (in files, buffers and MRU files at the same time.)
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|node_modules)($|[/\\])|__init__\.py|(node_modules|_workspace)'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr|node_modules|public_gen)($|[/\\])|__init__\.py|(node_modules|_workspace|public_gen)'
 let g:ctrlp_root_markers = ['.git']
 let g:ctrlp_working_path_mode = 'ra' " search for nearest ancestor like .git, .hg, and the directory of the current file
 let g:ctrlp_match_window_bottom = 0 " show the match window at the top of the screen
@@ -350,6 +376,10 @@ set laststatus=2
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 0
 let g:syntastic_puppet_lint_disable = 0
+
+" YCM
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
 
 " Airline configs
 let g:airline#extensions#tabline#enabled = 1
@@ -381,10 +411,6 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['go', 'govet']
 let g:go_highlight_functions = 1
-
-" Typescript
-au BufRead,BufNewFile *.ts setlocal filetype=typescript
-set rtp+=/home/torkel/.vim/bundle/typescript-tools.vim/
 
 " Trailing whitespace
 function! <SID>StripTrailingWhitespaces()

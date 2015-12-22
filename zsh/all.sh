@@ -9,7 +9,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
 echo "   Changing Default Shell to ZSH"
-chsh -s /bin/zsh
+#chsh -s /bin/zsh
 
 echo "   Fixing Shell Colors"
 sh base16-ocean.dark.sh

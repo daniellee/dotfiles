@@ -27,23 +27,25 @@ TAPS=(
 )
 
 FORMULAS=(
-    autoconf
-    automake
     caskroom/cask/brew-cask
     coreutils
     ctags
-    docker
+    erlang
     go
-    pkg-config
 )
 
 CASKS=(
-    node
+    firefox
     p4merge
     skype
     spotify
     sublime-text3
+    the-unarchiver
+    utorrent
+    virtualbox
+    visualvm
     vlc
+    xquartz
 )
 
 for tap in ${TAPS[@]}
