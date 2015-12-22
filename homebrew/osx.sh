@@ -27,94 +27,23 @@ TAPS=(
 )
 
 FORMULAS=(
-    android-sdk
-    ant
     autoconf
     automake
-    boot2docker
     caskroom/cask/brew-cask
     coreutils
     ctags
     docker
-    erlang
     go
-    grc
-    homebrew/versions/maven30
-    memcached
-    mercurial
-    packer
     pkg-config
-    pyenv
-    python
-    python3
-    rbenv
-    ruby-build
-    sbt
-    scala
-    spark
 )
 
 CASKS=(
-    alfred
-    arduino
-    audio-hijack-pro
-    bartender
-    bettertouchtool
-    caffeine
-    choosy
-    dash
-    devonthink-pro
-    dropbox
-    fantastical
-    firefox
-    fluid
-    flux
-    gimp
-    google-chrome
-    google-drive
-    google-hangouts
-    gpgtools
-    graphsketcher
-    hazel
-    induction
-    intellij-idea-community-eap
-    istat-menus
-    iterm2
-    keyboard-maestro
-    mailmate
-    marked
     node
-    nvalt
-    omnigraffle
-    omnioutliner
-    omnipresence
-    onepassword
-    osxfuse
     p4merge
-    pandoc
-    postgres
-    rdm
-    robomongo
-    screenflow
-    scrivener
-    sequel-pro
-    sketch
     skype
-    sourcetree
     spotify
     sublime-text3
-    textexpander
-    the-unarchiver
-    tower
-    transmit
-    ubersicht
-    utorrent
-    vagrant
-    virtualbox
-    visualvm
     vlc
-    wireshark
-    xquartz
 )
 
 for tap in ${TAPS[@]}
@@ -127,8 +56,6 @@ brew install ${FORMULAS[@]}
 brew update
 
 brew cask install ${CASKS[@]}
-
-brew cask alfred link
 
 # Special cases that need flags...
 brew install macvim --with-cscope --with-lua --HEAD
