@@ -11,8 +11,8 @@ platform:
 dotfiles:
 		bash $(DOTFILES)/script/bootstrap.sh
 
-mac:	platform crossplatform dotfiles
+mac:	dotfiles platform crossplatform
 
-linux:	crossplatform dotfiles platform
+linux:	dotfiles crossplatform platform
 
 windows: crossplatform dotfiles platform
