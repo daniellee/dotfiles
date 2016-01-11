@@ -21,12 +21,16 @@ sudo apt-get -y install screen tmux
 # VIM sudo apt-get -y build-dep vim
 sudo apt-get -y install exuberant-ctags cscope xclip
 
+# Python
+sudo apt-get -y install python-dev python-pip python3-dev python3-pip
+
 # Neovim
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get -y install neovim
+pip install neovim
 
-#node js 
+#node js
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install --yes nodejs
 
