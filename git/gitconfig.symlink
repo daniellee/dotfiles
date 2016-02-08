@@ -1,8 +1,8 @@
 # Borrowed from https://github.com/matthewmccullough/dotfiles/
 
 [user]
-  name = Torkel Ödegaard
-  email = torkel.odegaard@gmail.com
+  name = Daniel Lee
+  email = daniel.limerick@gmail.com
 
 [color]
 # ui = true is a superset of all the more specific color options
