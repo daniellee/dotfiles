@@ -99,6 +99,17 @@ alias cdgf='cd ~/dev/go/src/github.com/grafana/grafana'
 alias cdgfr='cd ~/dev/raintank/go/src/github.com/grafana/grafana'
 alias vim='nvim'
 
+alias ls='ls -F --color --show-control-chars'
+alias ll='ls -l'
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias got='git '
+alias get='git '
+alias gut='git '
+
 export LANG="sv_SE.UTF-8"
 export LC_COLLATE="sv_SE.UTF-8"
 export LC_CTYPE="sv_SE.UTF-8"

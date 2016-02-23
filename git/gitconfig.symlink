@@ -2,7 +2,7 @@
 
 [user]
   name = Daniel Lee
-  email = daniel.limerick@gmail.com
+  email = dan.limerick@gmail.com
 
 [color]
 # ui = true is a superset of all the more specific color options
@@ -52,6 +52,12 @@
   ds = !git diff | subl
   dv = !git diff | vim
   who = shortlog -s --
+	dc = diff --cached
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	churn = "!f() { git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count\tfile\"} {print $1 \"\t\" $2}' | sort -g; }; f"
+	noff = merge --no-ff
   ph = push
   pl = pull
   lp = log -p
@@ -187,23 +193,25 @@
 [rerere]
   enabled = true
 
-[difftool]
-  prompt = false
-
-[diff]
-#  external = /usr/local/bin/git-diff.sh
-
-[mergetool]
-  prompt = false
-  keepBackup = false
-
 [merge]
-tool = mymeld
-conflictstyle = diff3
-
-[mergetool "mymeld"]
-cmd = meld --output "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
-
+    keepBackup = false;
+    tool = p4merge
+[mergetool]
+    prompt = false
+[mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+[diff]
+    tool = p4merge
+[difftool]
+    prompt = false
+[difftool "p4merge"]
+    cmd = p4merge "$LOCAL" "$REMOTE"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
 
 [hub]
   protocol = ssh
@@ -214,3 +222,6 @@ cmd = meld --output "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
 
 [push]
   default = matching
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
