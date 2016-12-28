@@ -96,7 +96,6 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 # aliases
 alias irssi='TERM=screen-256color irssi'
 alias cdgf='cd ~/dev/go/src/github.com/grafana/grafana'
-alias cdgfr='cd ~/dev/raintank/go/src/github.com/grafana/grafana'
 alias vim='nvim'
 
 alias ls='ls -F --color --show-control-chars'
@@ -121,5 +120,15 @@ export LC_ALL="sv_SE.UTF-8"
 
 stty -ixon
 
-export NVM_DIR="/home/torkel/.nvm"
+export NVM_DIR="/home/daniel/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/daniel/Downloads/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/daniel/Downloads/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/daniel/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/daniel/Downloads/google-cloud-sdk/completion.zsh.inc'
+fi
