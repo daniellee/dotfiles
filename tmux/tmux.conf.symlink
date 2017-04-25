@@ -1,6 +1,3 @@
-set -g utf8
-set-window-option -g utf8 on
-
 set-window-option -g mode-keys vi
 
 # make tmux display things in 256 colors
@@ -29,6 +26,7 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # use PREFIX | to split window horizontally and PREFIX - to split vertically
 bind | split-window -h -c '#{pane_current_path}'
+bind < split-window -h -c '#{pane_current_path}'
 bind - split-window -v -c '#{pane_current_path}'
 bind c new-window -c '#{pane_current_path}'
 
@@ -46,22 +44,33 @@ bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
 # resize panes using PREFIX H, J, K, L
-bind H resize-pane -L 15
-bind J resize-pane -D 15
-bind K resize-pane -U 15
-bind L resize-pane -R 15
+bind -r H resize-pane -L 15
+bind -r J resize-pane -D 15
+bind -r K resize-pane -U 15
+bind -r L resize-pane -R 15
 
 # C-i for even-vertical arrangement and C-o to zoom current pane
 bind-key C-i select-layout even-vertical
-bind-key C-v select-layout even-horizontal
+#bind-key C-v select-layout even-horizontal
 bind-key C-o resize-pane -y 1000
 
 ## Join/break windows:
 bind-key Enter break-pane
 bind-key Space command-prompt "joinp -t:%%" # %% = prompt for window.pane [-V|H] # vert|hor split
 
+# Vim copy and paste
+bind Escape copy-mode
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy y copy-pipe "xclip -sel clip -i"
+unbind p
+bind p paste-buffer
+
+# Copy paste with xclip
+bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
+bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
+
 # Sync panes
-# bind C-s set-window-option synchronize-panes
+bind C-s set-window-option synchronize-panes
 
 # ----------------------
 # set some pretty colors
@@ -78,7 +87,6 @@ set-option -g message-fg brightred #orange
 # Status Bar
 # -----------------------
 set-option -g status on                # turn the status bar on
-set -g status-utf8 on                  # set utf-8 for the status bar
 set -g status-interval 5               # set update frequencey (default 15 seconds)
 set -g status-justify centre           # center window list for clarity
 # set-option -g status-position top    # position the status bar at top of screen
@@ -90,8 +98,6 @@ set -g visual-activity on
 # clock
 set-window-option -g clock-mode-colour green #green
 
-# status bar
-set -g status-utf8 on
 # current session
 set -g status-bg colour235
 set -g status-left ' #S '
